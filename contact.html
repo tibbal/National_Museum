@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>National Museum of Anbontown</title>
+<link rel="icon" type="image/x-icon" href="css/favicon.ico">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class= "topnav">
+<div class="nav-img">
+<a href="index.html"><img src="css/smamsmusmim.png"></a>
+</div>
+<div class="nav-links">
+<a href="timeline.html">What's On</a>
+<a href="gallery.html">Gallery</a>
+<a href="visits.html">Visits</a>
+<a href="contact.html">Contact</a>
+
+</div>
+</div>
+<div class="main">
+<div class="inputs">
+<h1 id="nmoa" ><br>Contact</h1>
+<h4>Get in touch! Come plan a tour or a visit!</h4>
+<h3>Call <em>0467893465</em> or enter your credentials below:</h3>
+<label>Your Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input id="nameInput"><br></label>
+<label>Your Email Address: <input id="emailInput"><br></label>
+<label>Date of Visit:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="date" id="visitDate"></label>
+<h4>Would you like a normal visit or a tour of the current exhibit?</h4>
+<label>
+  Type of visit:
+  <select id="visit_type">
+  <option value="a Normal Visit">Normal Visit</option>
+  <option value="an Exhibition Tour">Exhibition Tour</option>
+</select>
+</label>
+</div>
+<div class="result">
+<p>
+Dear National Museum,
+
+<br><br>
+
+I, <span id="nameSpan"></span> would like to book
+<span id="visitSpan"></span> for
+<span id="dateSpan"></span>.
+
+I am looking forwards to my visit and will be sure to leave a generous donation so you can continue doing what you're doing.
+
+<br><br>
+
+Sincerely,
+
+<br><br>
+
+<span id="lnameSpan"></span>
+<br>
+<span id="emailSpan"></span>
+</p>
+</div>
+<script>
+const nameInput = document.getElementById("nameInput");
+const emailInput = document.getElementById("emailInput");
+const visitDate = document.getElementById("visitDate");
+const visitType = document.getElementById("visit_type");
+
+const nameSpan = document.getElementById("nameSpan");
+const lnameSpan = document.getElementById("lnameSpan");
+const emailSpan = document.getElementById("emailSpan");
+const dateSpan = document.getElementById("dateSpan");
+const visitSpan = document.getElementById("visitSpan");
+
+function updateAll() {
+  nameSpan.textContent = nameInput.value;
+  lnameSpan.textContent = nameInput.value;
+  emailSpan.textContent = emailInput.value;
+  visitSpan.textContent = visitType.value;
+  if (visitDate.value) {
+    dateSpan.textContent =
+        new Date(visitDate.value).toLocaleDateString("en-AU", {
+            day: "numeric",
+            month: "long",
+            year: "numeric"
+        });
+} else {
+    dateSpan.textContent = "";
+}
+}
+
+nameInput.oninput = updateAll;
+emailInput.oninput = updateAll;
+visitDate.oninput = updateAll;
+visitType.onchange = updateAll;
+
+updateAll();
+</script>
+</div>
+<div class="footer_c">
+<p>National Museum of Anbontown ©265</p>
+</div>
+</body>
+</html>

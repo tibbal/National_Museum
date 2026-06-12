@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>National Museum of Anbontown</title>
+<link rel="icon" type="image/x-icon" href="css/favicon.ico">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class= "topnav">
+<div class="nav-img">
+<a href="index.html"><img src="css/smamsmusmim.png"></a>
+</div>
+<div class="nav-links">
+<a href="Timeline.html">What's On</a>
+<a href="Gallery.html">Gallery</a>
+<a href="Visits.html">Visits</a>
+<a href="contact.html">Contact</a>
+
+</div>
+</div>
+<div class="main">
+<h1 id="nmoa" ><br>Online Gallery</h1>
+<h4>An online gallery of our most prized and famous objects.<br><br></h4>
+<div class="gallery">
+<img id="myImg" class="gallimg" src="css/giant.png" alt="Ancient figure of a giant from about 6 A.W.">
+<img id="myImg" class="gallimg" src="css/pistol.jpg" alt="Vintage Pistol from 90 A.W.">
+<img id="myImg" class="gallimg" src="css/bayonette.avif" alt="A Swisherish bayonette, from about 60 A.W.">
+<img id="myImg" class="gallimg" src="css/bone.png" alt="Ancient Shaman Necklace excavated in the Sot Plateu">
+<img id="myImg" class="gallimg" src="css/pot.webp" alt="Ancient Cibbese pottery found in the Annan Mountains">
+<img id="myImg" class="gallimg" src="css/cannon.jpg" alt="A cannon from the Dimmian Revolution">
+<img id="myImg" class="gallimg" src="css/helmet.jpg" alt="A Duplian Helment from around 70 A.W.">
+<img id="myImg" class="gallimg" src="css/fish.jpg" alt="A Kittian fish stool from around 200 A.W.">
+<img id="myImg" class="gallimg" src="css/mask.jpg" alt="A Yublian gas mask from about 170 A.W.">
+
+</div>
+<div id="imgpopup" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img01">
+  <div id="caption"></div>
+</div>
+<script>
+var modal = document.getElementById('imgpopup');
+var images = document.getElementsByClassName('gallimg');
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption");
+
+for (var i = 0; i < images.length; i++) {
+  var img = images[i];
+ 
+  img.onclick = function(evt) {
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+  }
+}
+
+var span = document.getElementsByClassName("close")[0];
+
+span.onclick = function() {
+  modal.style.display = "none";
+}</script>
+</div>
+<div class="footer">
+<p>National Museum of Anbontown ©265</p>
+</div>
+</body>
+</html>
